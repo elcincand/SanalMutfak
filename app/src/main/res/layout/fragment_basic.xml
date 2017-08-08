@@ -21,6 +21,13 @@
             app:srcCompat="@drawable/logo2"
             android:layout_weight="0.21" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21"
+            android:text="Button" />
+
         <EditText
             android:id="@+id/add"
             android:layout_marginLeft="20dp"

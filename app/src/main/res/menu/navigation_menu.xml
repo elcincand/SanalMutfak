@@ -10,6 +10,7 @@
         android:orderInCategory="100"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="Settings"
+        android:clickable="true"
         android:showAsAction="always"
         tools:ignore="AppCompatResource" />
 
@@ -20,6 +21,7 @@
         android:icon="@drawable/ic_notifications_none_black_24dp"
         android:title="Notification"
         android:showAsAction="always"
+        android:clickable="true"
         tools:ignore="AppCompatResource" />
 
     <item
@@ -27,23 +29,37 @@
         android:orderInCategory="1"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
+        android:clickable="true"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_power_settings_new_black_24dp"
+        android:title="Log out"
+        android:clickable="true"
         android:showAsAction="always"
         tools:ignore="AppCompatResource"/>
 
     <item
         android:id="@+id/myprofile"
+        android:clickable="true"
         android:title="My Profile" />
 
 
     <item
         android:id="@+id/myinventory"
+        android:clickable="true"
         android:title="My Inventory" />
 
     <item
         android:id="@+id/myimprovement"
+        android:clickable="true"
         android:title="My Savings" />
 
     <item
         android:id="@+id/myshopp"
+        android:clickable="true"
         android:title="My Shopping List" />
 </menu>
