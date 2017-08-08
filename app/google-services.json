@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "663532168598",
+    "firebase_url": "https://sanalmutfak-d81ad.firebaseio.com",
+    "project_id": "sanalmutfak-d81ad",
+    "storage_bucket": "sanalmutfak-d81ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663532168598:android:2a44ebaee1c22372",
+        "android_client_info": {
+          "package_name": "com.android.sanalmutfak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663532168598-npvufcvi5bt0lhr993pufl64nukhftp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.sanalmutfak",
+            "certificate_hash": "5268b5203ab2d81d12c74c97ef387f7523c0e69d"
+          }
+        },
+        {
+          "client_id": "663532168598-1sclhf2233t2j2ed3h2q5aiedv4rp2cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBForZq_WqWEl3U8mqwXFz2NRYtwkLjE4w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663532168598-1sclhf2233t2j2ed3h2q5aiedv4rp2cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
