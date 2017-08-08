@@ -41,7 +41,7 @@ public class OpeningFragment extends Fragment {
                 LoginFragment fragment = new LoginFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentcontainer, fragment);
+                fragmentTransaction.replace(R.id.fragmentcontainer2, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
@@ -56,7 +56,7 @@ public class OpeningFragment extends Fragment {
                 SignUpFragment fragment = new SignUpFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentcontainer, fragment);
+                fragmentTransaction.replace(R.id.fragmentcontainer2, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 

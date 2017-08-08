@@ -1,6 +1,7 @@
 package com.android.sanalmutfak;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -64,7 +65,7 @@ public class LoginFragment extends Fragment {
                 SignUpFragment fragment = new SignUpFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentcontainer, fragment);
+                fragmentTransaction.replace(R.id.fragmentcontainer2, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
@@ -88,13 +89,8 @@ public class LoginFragment extends Fragment {
                     if (dataSnapshot.child(logkitchen).exists()) {
 
                         if (dataSnapshot.child(logkitchen).child("kitchenpass").getValue().toString().equals(logpass)) {
-
-                            BasicFragment fragment = new BasicFragment();
-                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.fragmentcontainer, fragment);
-                            fragmentTransaction.addToBackStack(null);
-                            fragmentTransaction.commit();
+                            Intent i = new Intent(getActivity(), MainActivity.class);
+                            startActivity(i);
                         }else {
 
                             Toast.makeText(getActivity(), "Wrong password!",

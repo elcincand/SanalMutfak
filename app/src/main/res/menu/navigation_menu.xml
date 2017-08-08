@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+
+
+    <item
+        android:id="@+id/action_notifications"
+        android:orderInCategory="10"
+        android:icon="@drawable/ic_notifications_none_black_24dp"
+        android:title="Notification"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+
+    <item
+        android:id="@+id/myprofile"
+        android:title="My Profile" />
+
+
+    <item
+        android:id="@+id/myinventory"
+        android:title="My Inventory" />
+
+    <item
+        android:id="@+id/myimprovement"
+        android:title="My Savings" />
+
+    <item
+        android:id="@+id/myshopp"
+        android:title="My Shopping List" />
+</menu>
