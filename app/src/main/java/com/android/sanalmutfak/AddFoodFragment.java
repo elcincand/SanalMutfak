@@ -160,41 +160,7 @@ private ImageButton madd;
     }
 
 
-    public void addFood() {
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-
-        Query mfoodRef = mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen)).child("foods");
-        mfoodRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    DataSnapshot lastKitchen = getLastElement(dataSnapshot.getChildren());
-                    int foodID = 0;
-                    if(lastKitchen != null){
-                        foodID = Integer.parseInt(lastKitchen.getKey()) + 1;
-                    }
-                    Log.d("food", String.valueOf(foodID));
-                    String fname = mname.getText().toString();
-                    double fprice = Double.parseDouble(mprice.getText().toString());
-                    String fut = mut.getText().toString();
-                    String fskt = mskt.getText().toString();
-
-
-                    Food food = new Food(fname, fskt, fut, fprice);
-                    mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
-                            .child("foods").child(String.valueOf(foodID))
-                            .setValue(food);
-
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    //Handle possible errors.
-                }
-            });
-
-
-    }
 
     private void updateskt() {
         String myFormat = "dd/MM/yy"; //In which you need put here
@@ -214,6 +180,40 @@ private ImageButton madd;
 
     }
 
+    public void addFood() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
+
+        Query mfoodRef = mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen)).child("foods");
+        mfoodRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                DataSnapshot lastKitchen = getLastElement(dataSnapshot.getChildren());
+                int foodID = 0;
+                if(lastKitchen != null){
+                    foodID = Integer.parseInt(lastKitchen.getKey()) + 1;
+                }
+                Log.d("food", String.valueOf(foodID));
+                String fname = mname.getText().toString();
+                double fprice = Double.parseDouble(mprice.getText().toString());
+                String fut = mut.getText().toString();
+                String fskt = mskt.getText().toString();
+
+
+                Food food = new Food(fname, fskt, fut, fprice);
+                mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
+                        .child("foods").child(String.valueOf(foodID))
+                        .setValue(food);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                //Handle possible errors.
+            }
+        });
+
+
+    }
 
 }
