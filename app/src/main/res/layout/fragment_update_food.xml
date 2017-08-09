@@ -34,57 +34,57 @@
                 android:hint="Add Food..." />
 
             <ImageButton
-                android:id="@+id/search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:layout_weight="0.1"
-                app:srcCompat="@android:drawable/ic_menu_search" />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-
-
-            <TextView
-                android:id="@+id/foodname"
-                android:layout_width="215dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.08" />
-
-            <EditText
-                android:id="@+id/updateskt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Expiration Date" />
-
-            <EditText
-                android:id="@+id/updateuretim"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Production Date " />
-
-
-            <EditText
-                android:id="@+id/updateprice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Price" />
-
+                android:id="@+id/foodAddButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="25dp"
+                app:srcCompat="@drawable/ic_add_box_white_24dp" />
         </LinearLayout>
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+
+
+        <TextView
+            android:id="@+id/foodname"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08" />
+
+        <EditText
+            android:id="@+id/updateskt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Expiration Date"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/updateuretim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Production Date "
+            android:inputType="textPersonName" />
+
+
+        <EditText
+            android:id="@+id/updateprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Price"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,52 +94,21 @@
         android:orientation="horizontal"
         android:weightSum="1">
 
-            <Button
-                android:id="@+id/addok"
-                android:layout_width="100dp"
-                android:layout_marginTop="50dp"
-                android:layout_height="50dp"
-                android:text="OK" />
+        <Button
+            android:id="@+id/addok"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="OK" />
 
 
-            <Button
-                android:id="@+id/remove"
-                android:layout_width="100dp"
-                android:layout_marginTop="50dp"
-                android:layout_height="50dp"
-                android:text="Remove" />
+        <Button
+            android:id="@+id/remove"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="Remove" />
 
-        </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-
-        <ImageButton
-            android:id="@+id/menu"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/star_big_off" />
-
-        <ImageButton
-            android:id="@+id/addbar"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            app:srcCompat="@android:drawable/ic_menu_add" />
-
-
-        <ImageButton
-            android:id="@+id/logout"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_lock_power_off" />
     </LinearLayout>
-
 
 </FrameLayout>

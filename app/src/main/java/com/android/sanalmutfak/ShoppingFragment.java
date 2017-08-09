@@ -31,7 +31,7 @@ private ImageButton madd;
             container.removeAllViews();
         }
         View view = inflater.inflate(R.layout.fragment_shopping, container, false);
-        madd =(ImageButton) view.findViewById(R.id.addbar);
+        madd =(ImageButton) view.findViewById(R.id.foodAddButton);
 
 
         madd.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,7 @@ private ImageButton madd;
                 AddFoodFragment fragment = new AddFoodFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.drawer_layout, fragment);
+                fragmentTransaction.replace(R.id.main_container, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
