@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -195,16 +196,20 @@ private ImageButton madd;
                 }
                 Log.d("food", String.valueOf(foodID));
                 String fname = mname.getText().toString();
-                double fprice = Double.parseDouble(mprice.getText().toString());
+                String fprice = mprice.getText().toString();
                 String fut = mut.getText().toString();
                 String fskt = mskt.getText().toString();
 
+            if(fname == null || fprice == null || fut == null || fskt == null){
 
+                Toast.makeText(getActivity(), "Empty lot!",
+                        Toast.LENGTH_LONG).show();
+            }else {
                 Food food = new Food(fname, fskt, fut, fprice);
                 mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
                         .child("foods").child(String.valueOf(foodID))
                         .setValue(food);
-
+            }
             }
 
             @Override
