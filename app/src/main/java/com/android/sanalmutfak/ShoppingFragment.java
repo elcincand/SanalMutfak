@@ -27,6 +27,9 @@ private ImageButton madd;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (container != null) {
+            container.removeAllViews();
+        }
         View view = inflater.inflate(R.layout.fragment_shopping, container, false);
         madd =(ImageButton) view.findViewById(R.id.addbar);
 
@@ -38,7 +41,7 @@ private ImageButton madd;
                 AddFoodFragment fragment = new AddFoodFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentcontainer, fragment);
+                fragmentTransaction.replace(R.id.drawer_layout, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }

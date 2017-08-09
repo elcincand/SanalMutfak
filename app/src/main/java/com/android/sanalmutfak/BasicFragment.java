@@ -3,8 +3,6 @@ package com.android.sanalmutfak;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +35,9 @@ public class BasicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        if (container != null) {
+            container.removeAllViews();
+        }
         View view = inflater.inflate(R.layout.fragment_basic, container, false);
 
 
@@ -89,12 +90,6 @@ public class BasicFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                AddFoodFragment fragment = new AddFoodFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentcontainer, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
             }
         });
 
@@ -103,30 +98,6 @@ public class BasicFragment extends Fragment {
 
         return view;
     }
-
-
-
-/*
-
-        DatabaseReference mbozukRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/1/ings/0/name");
-            mbozukRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    String bozuk = dataSnapshot.getValue(String.class);
-                    mbozuk.setText(bozuk);
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-
-        });
-
-
-
-
-    }*/
 
 
     }
