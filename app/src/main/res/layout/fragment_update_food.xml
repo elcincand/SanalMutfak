@@ -89,17 +89,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <Button
-            android:id="@+id/addok"
+            android:id="@+id/update"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
-            android:text="OK" />
+            android:text="Update" />
 
 
         <Button
@@ -108,6 +108,13 @@
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
             android:text="Remove" />
+
+        <Button
+            android:id="@+id/addShoppingList"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="Add Shopping List" />
 
     </LinearLayout>
 

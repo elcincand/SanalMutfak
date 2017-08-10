@@ -47,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:weightSum="1">
 
@@ -56,13 +57,8 @@
             android:layout_width="300dp"
             android:layout_height="115dp"
             android:contextClickable="true"
-            />
+            android:layout_weight="0.7" />
 
-        <ListView
-            android:id="@+id/bozuk"
-            android:layout_marginTop="30dp"
-            android:layout_width="300dp"
-            android:layout_height="150dp" />
 
 
 

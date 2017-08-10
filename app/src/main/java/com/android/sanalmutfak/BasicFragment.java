@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -69,38 +70,62 @@ public class BasicFragment extends Fragment {
     }
 
     public void displayFood() {
-        dataModels= new ArrayList<>();
+        dataModels = new ArrayList<>();
         DatabaseReference mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
-            + LoginFragment.logkitchen +"/foods");
+                + LoginFragment.logkitchen + "/foods");
 
-        adapter= new ListAdapter(dataModels,getActivity());
+        adapter = new ListAdapter(dataModels, getActivity());
         mfood.setAdapter(adapter);
+        mfood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                DataModel dataModel = dataModels.get(position);
+                UpdateFoodFragment fragment = new UpdateFoodFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
 
         mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-            for (DataSnapshot childSnapShot : dataSnapshot.getChildren()) {
-                String bname = (String) childSnapShot.child("foodname").getValue();
-                String bskt = (String) childSnapShot.child("skt").getValue();
-                String but = (String) childSnapShot.child("ut").getValue();
-                String bprice = (String) childSnapShot.child("price").getValue();
+                for (DataSnapshot childSnapShot : dataSnapshot.getChildren()) {
+                    String bname = (String) childSnapShot.child("foodname").getValue();
+                    String bskt = (String) childSnapShot.child("skt").getValue();
+                    String but = (String) childSnapShot.child("ut").getValue();
+                    String bprice = (String) childSnapShot.child("price").getValue();
 
 
-                dataModels.add(new DataModel(bname, bskt, but, bprice));
+                    dataModels.add(new DataModel(bname, bskt, but, bprice));
 
-                Log.d("kedi", String.valueOf(dataModels));
-                adapter.notifyDataSetChanged();
+                    Log.d("kedi", String.valueOf(dataModels));
+                    adapter.notifyDataSetChanged();
+                }
+
+
             }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
+    }
+
+
+        public void onBackPressed() {
+            BasicFragment fragment = new BasicFragment();
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.main_container, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
         }
-
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-        }
-    });
-
 
 }
 
@@ -138,5 +163,5 @@ public class BasicFragment extends Fragment {
 
 
     }*/
-    }
+
 

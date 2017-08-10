@@ -14,15 +14,12 @@ import java.util.ArrayList;
  * Created by elcin on 8/10/17.
  */
 
-public class ListAdapter extends ArrayAdapter<DataModel> implements View.OnClickListener {
+public class ListAdapter extends ArrayAdapter<DataModel> {
 
         private ArrayList<DataModel> dataSet;
         Context mContext;
 
-    @Override
-    public void onClick(View view) {
 
-    }
 
     // View lookup cache
         private static class ViewHolder {
@@ -38,26 +35,6 @@ public class ListAdapter extends ArrayAdapter<DataModel> implements View.OnClick
             this.mContext=context;
 
         }
-
-     /*   @Override
-        public void onClick(View v) {
-
-            int position=(Integer) v.getTag();
-            Object object= getItem(position);
-            DataModel dataModel=(DataModel)object;
-
-            switch (v.getId())
-            {
-                case R.id.item_info:
-                    UpdateFoodFragment fragment = new UpdateFoodFragment();
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.main_container, fragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                    break;
-            }
-        }*/
 
         private int lastPosition = -1;
 
@@ -95,7 +72,7 @@ public class ListAdapter extends ArrayAdapter<DataModel> implements View.OnClick
             viewHolder.txtName.setText(dataModel.getProduct());
             viewHolder.txtTarih.setText(dataModel.getTuketim());
             viewHolder.txtCountDown.setText(dataModel.getCounter());
-            viewHolder.update.setOnClickListener(this);
+            //viewHolder.update.setOnClickListener(this);
             viewHolder.update.setTag(position);
             // Return the completed view to render on screen
             return convertView;
