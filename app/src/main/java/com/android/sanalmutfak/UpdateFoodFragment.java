@@ -19,6 +19,7 @@ public class UpdateFoodFragment extends Fragment {
     private Button mremove;
     private Button maddshop;
 
+    BasicFragment basic = new BasicFragment();
 
     public UpdateFoodFragment() {
         // Required empty public constructor
@@ -55,6 +56,7 @@ public class UpdateFoodFragment extends Fragment {
 
                 @Override
                 public void onClick(View view) {
+                  //  basic.removeItemBasic();
                     BasicFragment fragment = new BasicFragment();
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -82,16 +84,8 @@ public class UpdateFoodFragment extends Fragment {
     }
 
 
-    public void updateFood(){
 
-    }
 
-    public void removeFood(){
 
-    }
-
-    public void addShoppingFood(){
-
-    }
 
 }

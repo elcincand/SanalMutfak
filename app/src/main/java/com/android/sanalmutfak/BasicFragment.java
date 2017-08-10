@@ -1,10 +1,12 @@
 package com.android.sanalmutfak;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,10 +32,8 @@ public class BasicFragment extends Fragment {
     private ImageButton madd;
     private ListView mfood;
     private ListView mbozuk;
-   // List<Food> basiclist = new ArrayList<>();
-  //  ArrayAdapter<String> adapter;
-    ArrayList<DataModel> dataModels;
-    private static ListAdapter adapter;
+    ArrayList<DataModelBasic> dataModelsBasic;
+    private static ListAdapterBasic adapterbasic;
 
     public BasicFragment() {
         // Required empty public constructor
@@ -70,25 +70,29 @@ public class BasicFragment extends Fragment {
     }
 
     public void displayFood() {
-        dataModels = new ArrayList<>();
+        dataModelsBasic = new ArrayList<>();
         DatabaseReference mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
                 + LoginFragment.logkitchen + "/foods");
 
-        adapter = new ListAdapter(dataModels, getActivity());
-        mfood.setAdapter(adapter);
+        adapterbasic = new ListAdapterBasic(dataModelsBasic, getActivity());
+        mfood.setAdapter(adapterbasic);
         mfood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog.Builder adb=new AlertDialog.Builder(getActivity());
+                adb.setTitle("Delete?");
+                adb.setMessage("Are you sure you want to delete the item?");
+                adb.setNegativeButton("Cancel", null);
+                adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                removeItemBasic();
 
-                DataModel dataModel = dataModels.get(position);
-                UpdateFoodFragment fragment = new UpdateFoodFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.main_container, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                   }
+                });
+                adb.show();
             }
         });
+
 
         mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -98,13 +102,12 @@ public class BasicFragment extends Fragment {
                     String bname = (String) childSnapShot.child("foodname").getValue();
                     String bskt = (String) childSnapShot.child("skt").getValue();
                     String but = (String) childSnapShot.child("ut").getValue();
-                    String bprice = (String) childSnapShot.child("price").getValue();
 
 
-                    dataModels.add(new DataModel(bname, bskt, but, bprice));
+                    dataModelsBasic.add(new DataModelBasic(bname, bskt, but));
 
-                    Log.d("kedi", String.valueOf(dataModels));
-                    adapter.notifyDataSetChanged();
+                    Log.d("kedi", String.valueOf(dataModelsBasic));
+                    adapterbasic.notifyDataSetChanged();
                 }
 
 
@@ -117,51 +120,31 @@ public class BasicFragment extends Fragment {
 
     }
 
+    public void removeItemBasic() {
 
-        public void onBackPressed() {
-            BasicFragment fragment = new BasicFragment();
-            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.main_container, fragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-        }
+        final DatabaseReference mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
+                + LoginFragment.logkitchen + "/foods");
+
+        mfood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                DataModelBasic toRemovebasic = adapterbasic.getItem(position);
+                mbasicRef.child(String.valueOf(position)).removeValue();
+                adapterbasic.remove(toRemovebasic);
+                adapterbasic.notifyDataSetChanged();
+            }
+
+        });
+    }
+
+
+
+    public void updateFood(){
+
+    }
 
 }
 
-    /*public void displayFood() {
-        DatabaseReference mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
-                + LoginFragment.logkitchen +"/foods");
 
-        // adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, basiclist);
-        mfood.setAdapter(adapter);
-        mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot childSnapShot : dataSnapshot.getChildren()) {
-                    String bname = (String) childSnapShot.child("foodname").getValue();
-                    String bskt = (String) childSnapShot.child("skt").getValue();
-                    String but = (String) childSnapShot.child("ut").getValue();
-                    String bprice = (String) childSnapShot.child("price").getValue();
-
-
-                    //Food food = new Food(bname, bskt, but, bprice);
-                   // basiclist.add(food);
-                   // basiclist.add(bskt);
-                    Log.d("kedi", String.valueOf(basiclist));
-                    adapter.notifyDataSetChanged();
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-            });
-
-
-    }*/
 
 
