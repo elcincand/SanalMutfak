@@ -52,12 +52,14 @@
 
 
         <ListView
-            android:id="@+id/bozulacaklar"
+            android:id="@+id/food"
             android:layout_width="300dp"
-            android:layout_height="115dp"/>
+            android:layout_height="115dp"
+            android:contextClickable="true"
+            />
 
         <ListView
-            android:id="@+id/bozulmuslar"
+            android:id="@+id/bozuk"
             android:layout_marginTop="30dp"
             android:layout_width="300dp"
             android:layout_height="150dp" />

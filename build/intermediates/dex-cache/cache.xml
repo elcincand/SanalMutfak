@@ -3,84 +3,48 @@
 
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/429b82619b7c83acd9d86730f18b664296e5ecc5/output/jars/classes.jar"
+        jar="/Users/elcin/.android/build-cache/a3aff7a64495506321791cf1ae5a8a31ea65d966/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_995f6c36fbdfa07dc5df912ee48ed384136e87b5.jar" />
+        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_c3b2198cebf7add5fff68aee9d5087f0c7aaa46b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/ca3f4424655e47a07c63194d4dde98c9fb50a099/output/jars/classes.jar"
+        jar="/Users/elcin/.android/build-cache/6ac28c8451f66626eed3931f91c0438f5907b9d0/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="f56a68df45e18ce77814db6553fdaa229308f49b">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_7089b375f30ef59fa7865baeabf53934cff40b6f.jar" />
+        sha1="cf8c0b6ec17f059cf61ecd101296e16c38562196">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_c166760e5b47a860de4b36a4441fb2af53f171a4.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/107c9a19838f9b711a90642fa30b71093fe51c57/output/jars/classes.jar"
+        jar="/Users/elcin/.android/build-cache/c4af38a1523e09392ce953d63701a2c70a12cde7/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="d7572433ba21aa9e4624c819fa738b2748b82d05">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_415031062e9395f21effd0ea1d420e757b8f94ab.jar" />
+        sha1="8bdf5cd702d3d860cd85783a776c26605f557882">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_0d78031eb9527ec387101c4c421e26fbc5f33a39.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/6d756ad62578a4854218ac1fd2e4ec40a951f71b/output/jars/classes.jar"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.2/f8d87f15b94b8d74e7ccf61d7eedb558811cdb30/converter-gson-2.0.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="30489a97b06cc3945bdbcc1770089af9e3b3b64d">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_160c09e913b0f0c84b614ea4f1fd3cc9dbe58c67.jar" />
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/converter-gson-2.0.2_ad2125d1a372258a17c82e038d1bae3ea5fd28db.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/e2bf250ab88afad8af803c648177d182c0368d79/output/jars/classes.jar"
+        jar="/Users/elcin/.android/build-cache/7ad85ea9257bfc68521719ad498a7666e0ef5f87/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_319c25802a9f8b7c75c0288d396ab2aff5a7b6db.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/d5ee177f35afd026f139c2f246e522cc5bca77c1/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f315c6b5b99081f16a79c9aaa557328a4644fe63">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_9e0ad7141bf2036ca82552b926606fd011d28644.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/d1740aee8ab75536de5be80a27e8130af7819313/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="33203b081101ca6242a4cd746aafe5fc2dd98a34">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_7426a134cfadb8a95d5b0a9fb18044f32c57afd8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/0bdbc24536adb341e81a896057e928d8d3e90a96/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_3849fdcc39640b9be5342ad094a9dce9b6a5adbd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/79ca62e3bbd7ad48aa9004717126205c68933445/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4838df6db988160b107e954e02a745370df543b6">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_7bad335c25ca68799dccef31ab54b18536ce5a9c.jar" />
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_6d2a990140454daf873f2250d111047432e66d3a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,39 +57,282 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/c7533a0fedba869bd9fd6540099ad9e860069665/output/jars/classes.jar"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="20ca7888c59f63d439f218a8810c88039f8bc7db">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_74bc4006e7881382a4f02ab7a45d0db876164fb1.jar" />
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/okhttp-3.2.0_cbe39f825e66d6587447baaf10c0a4b6432ed395.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/1b1fd3fbfe41131d136065b2be80a0c00f0b1623/output/jars/classes.jar"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.2/43eeae0b9fb087bb3194ba59ab63a38a32fbf3e/retrofit-2.0.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="dd7676ac12aa6653718b7ea33d93ce9d6915d526">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_0547aafcf13b054518fc2011ff7bcdafcfc4f98b.jar" />
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/retrofit-2.0.2_598210ef04773393a3bee0d4d30168bb0b7fcaa8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/132278c25182bc2481549b92ba2173d38ac3f2a1/output/jars/classes.jar"
+        jar="/Users/elcin/.android/build-cache/24e84075ad590a5319590c189b0a0eef3811979e/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_cc6d0918bbb19159f61cac3a88f3c8176bafb2db.jar" />
+        sha1="c6047a34af07d6ec4e950ba1dc70ce23ac65ecaa">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_9f96d9b645ac1e731dbec9e1c5ae0c675dea44a2.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/elcin/.android/build-cache/f982da6e57b7f235c158c13f27bd040d5d7c1bb3/output/jars/classes.jar"
+        jar="/Users/elcin/.android/build-cache/c7c59e96b10228232a6bc26d6654c21917b1ac65/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="e791f7f2fbf9ca5b3b576916533f844dfb384024">
-        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_3917c9eeedeb61309289746d7cf609e3d8cf83cd.jar" />
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_f574166794217eff701e228f612134332b0dab0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/0f71d5b03ca5c2965208fcb21e725e7037534d5b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="895c63ba9782b04f0c5da69205216f6ec87119eb">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_dd16f89cff84b3e778be43ec79ec9fefc3619120.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/ca6059eac7c0e521a41ece1a931c7d92bc829ac9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b831d3902674d096189451d46fce219e2c2904b7">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_80fcdccd4489cea6cee8260200df50aa643d6af2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_41c3bbfbdf4c5921fed43d4bb95c0d3d984f12b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/okio-1.6.0_ff5cd7b36e0aff5b48c2fb3dc0c061f6c9705c02.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/5595f73c48a363b85c398a7ec22f7e048ecb0cc6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a10ed1f1cff990ef081263ad33f13dc6c207eb4e">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_acd0a38ffffdfb9117101c93d9df43b40b696292.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_8b21075aca9b1a14844a9503b2ce30a9547b88f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/dbea5fec683a9a03793829493002c65ee39cf07f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_1b2aae8d29ddad3872ec2abe967529a2999f0da8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/e2bf250ab88afad8af803c648177d182c0368d79/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
+        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_319c25802a9f8b7c75c0288d396ab2aff5a7b6db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/glide-3.7.0_b015844aa6b1166041d90cfd126e15b6f1fbc4cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/3373394dc40bd9388fb7b65641f995b48978590f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f5bcd9cbfeedc58f493339841a7c5d0347a39f0b">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_cc01d39ad3a6f7ba8ca45b7b681694bb0c929fdc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/90ac930349a29706692c03933878dc154af1dd5d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="343ad59d9fb3bbf6ab99baafad859eb4b0fecc02">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_cd4f6ed3bf0bfa434145cf3adff2ddfc10cf3e01.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.twitter/twitter-text/1.13.0/78415b95ae3184c5926d593feab64bfc0b73b2dd/twitter-text-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="78415b95ae3184c5926d593feab64bfc0b73b2dd">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/twitter-text-1.13.0_cf0e12ee2e720487a2a42baa30d11cd44a0ed4bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/c8c3dde9ea12b2caa4f0c0c9b8c2f0d0e60ed2cb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_4a86c411edce9be84c222fd95c04f8b073efbd95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/7ee63fb055ccea8ff1dab02c124a781dcee25d22/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7308fa2037dac339ea04b90cdd17e87f835ea294">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_558f90153e52c099f5d739b2a6a45e002ec74a92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/5c019011b798ff0d141f1aaf01d5113b922ec54a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1395232a7eddc612029353b3c953cb0fced71076">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_8db3e3cdb8f925f9609384c96c308213ca156ad5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/2c1d593fbccaf4b918500893f463f266089979bb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_e06ceb3b6d7d0b179e60bc238d8b3b6bff2c85bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/28c748230ca14f8a118842422549c9efd01cecd0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_02a87d725072dbbcecbfb422ced5f22f6a001988.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/79ca62e3bbd7ad48aa9004717126205c68933445/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4838df6db988160b107e954e02a745370df543b6">
+        <dex dex="/Users/elcin/Desktop/SanalMutfak/app/build/intermediates/pre-dexed/debug/classes_7bad335c25ca68799dccef31ab54b18536ce5a9c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/169c8ca0876df871fba94f6e9dc691f6d01ac65b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="379a48c2da13ffb7ec7134f2c715663834357670">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_584adb9bdf6a3e2da0c472deb06076803d366be3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/d3c1ae039b0d2b0946c3b6c50d98f13df2d1af1d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_587eee54b416e21cf2cbfe4169ce38c2dfbe9ea3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/599463e1fe51c220faf4ffc0726d6ec90f3591e1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_9fe13ca39f73463ca58130b1dd75bb71aba71254.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/d5e35207e89957f9e724447903080ced6815f4b9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_a83b79f38007b38f28a733ce78b88a3270cac4f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.1/b9d63507329a7178e026fc334f87587ee5070ac5/gson-2.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/gson-2.6.1_60b93be930935069c545ced02ec969aa06284e90.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_4c578357ecf9053623bff436dd0f549fc868bc91.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/3fe0f6e917bdb30d496030c40c9596e9be59ee81/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="807751a24cf96566fd8675517c94d8463cf364db">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_b555e4f4dcadcdb8dbe77ccabb243471a33985f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/40df07b6898c6f2e1a6e97709b54383496530a1e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_ab70dc80550179948ff843b8cf96cd8e0cf0721c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/elcin/.android/build-cache/f8930a81f8b0ffc97031085808e046e000eb5ff7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
+        <dex dex="/Users/elcin/Desktop/sanalmutfak/app/build/intermediates/pre-dexed/debug/classes_a03489aea978835752235889c6944764cb0877f3.jar" />
     </item>
 
 </items>

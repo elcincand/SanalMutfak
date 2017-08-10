@@ -134,14 +134,15 @@ private ImageButton madd;
                maddok.setOnClickListener(new View.OnClickListener() {
            @Override
              public void onClick(View v) {
-                addFood();
-                BasicFragment fragment = new BasicFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.main_container, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-                }
+
+                   addFood();
+                   BasicFragment fragment = new BasicFragment();
+                   FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                   FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                   fragmentTransaction.replace(R.id.main_container, fragment);
+                   fragmentTransaction.addToBackStack(null);
+                   fragmentTransaction.commit();
+           }
          });
 
         return view;
@@ -189,28 +190,30 @@ private ImageButton madd;
         mfoodRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 DataSnapshot lastKitchen = getLastElement(dataSnapshot.getChildren());
                 int foodID = 0;
                 if(lastKitchen != null){
                     foodID = Integer.parseInt(lastKitchen.getKey()) + 1;
                 }
                 Log.d("food", String.valueOf(foodID));
+
                 String fname = mname.getText().toString();
                 String fprice = mprice.getText().toString();
                 String fut = mut.getText().toString();
                 String fskt = mskt.getText().toString();
+                if (fname != null && fprice != null && fut != null && fskt != null) {
+                    Food food = new Food(fname, fskt, fut, fprice);
 
-            if(fname == null || fprice == null || fut == null || fskt == null){
-
-                Toast.makeText(getActivity(), "Empty lot!",
-                        Toast.LENGTH_LONG).show();
-            }else {
-                Food food = new Food(fname, fskt, fut, fprice);
-                mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
+                    mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
                         .child("foods").child(String.valueOf(foodID))
                         .setValue(food);
+                } else {
+                    Toast.makeText(getActivity(), "Empty lot!",
+                            Toast.LENGTH_LONG).show();
+                }
             }
-            }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
