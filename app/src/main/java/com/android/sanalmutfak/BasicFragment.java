@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +33,7 @@ public class BasicFragment extends Fragment {
     private ListView mbozuk;
     ArrayList<DataModelBasic> dataModelsBasic;
     private static ListAdapterBasic adapterbasic;
+    DatabaseReference mbasicRef;
 
     public BasicFragment() {
         // Required empty public constructor
@@ -71,7 +71,7 @@ public class BasicFragment extends Fragment {
 
     public void displayFood() {
         dataModelsBasic = new ArrayList<>();
-        DatabaseReference mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
+        mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
                 + LoginFragment.logkitchen + "/foods");
 
         adapterbasic = new ListAdapterBasic(dataModelsBasic, getActivity());
@@ -81,18 +81,16 @@ public class BasicFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AlertDialog.Builder adb=new AlertDialog.Builder(getActivity());
                 adb.setTitle("Delete?");
-                adb.setMessage("Are you sure you want to delete the item?");
+                adb.setMessage("Are you sure you want to delete " + position);
                 adb.setNegativeButton("Cancel", null);
                 adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                removeItemBasic();
-
-                   }
+                        removeItemBasic();
+                    }
                 });
                 adb.show();
             }
         });
-
 
         mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -105,8 +103,6 @@ public class BasicFragment extends Fragment {
 
 
                     dataModelsBasic.add(new DataModelBasic(bname, bskt, but));
-
-                    Log.d("kedi", String.valueOf(dataModelsBasic));
                     adapterbasic.notifyDataSetChanged();
                 }
 
@@ -122,15 +118,12 @@ public class BasicFragment extends Fragment {
 
     public void removeItemBasic() {
 
-        final DatabaseReference mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
-                + LoginFragment.logkitchen + "/foods");
-
         mfood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DataModelBasic toRemovebasic = adapterbasic.getItem(position);
-                mbasicRef.child(String.valueOf(position)).removeValue();
                 adapterbasic.remove(toRemovebasic);
+                mbasicRef.child(String.valueOf(position)).removeValue();
                 adapterbasic.notifyDataSetChanged();
             }
 
