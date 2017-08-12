@@ -22,7 +22,7 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> {
 
 
     // View lookup cache
-        private static class ViewHolderBasic {
+        public static class ViewHolderBasic {
             TextView txtName;
             TextView txtTarih;
             TextView txtCountDown;
@@ -35,6 +35,20 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> {
             this.mContextBasic=context;
 
         }
+  /*  @Override
+    public void onClick(View v) {
+
+        int position=(Integer) v.getTag();
+        Object object= getItem(position);
+        DataModelBasic dataModel=(DataModelBasic) object;
+
+        switch (v.getId())
+        {
+            case R.id.item:
+                dataModel.
+                break;
+        }
+    }*/
 
         private int lastPosition = -1;
 
@@ -60,10 +74,12 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> {
                 result=convertView;
 
                 convertView.setTag(viewHolderBasic);
+
             } else {
                 viewHolderBasic = (ViewHolderBasic) convertView.getTag();
                 result=convertView;
             }
+
 
             //Animation animation = AnimationUtils.loadAnimation(mContext, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
            // result.startAnimation(animation);

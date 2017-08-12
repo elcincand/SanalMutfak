@@ -4,7 +4,7 @@ package com.android.sanalmutfak;
  * Created by elcin on 8/6/17.
  */
 
-class Kitchen {
+public class Kitchen {
 
 
     public String kitchenname;
