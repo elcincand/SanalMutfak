@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Created by elcin on 8/10/17.
  */
 
-public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> {
+public class ListAdapterBasic extends ArrayAdapter<DataModelBasic>{
 
         private ArrayList<DataModelBasic> dataSetBasic;
         Context mContextBasic;
@@ -22,7 +22,7 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> {
 
 
     // View lookup cache
-        public static class ViewHolderBasic {
+        private static class ViewHolderBasic {
             TextView txtName;
             TextView txtTarih;
             TextView txtCountDown;
@@ -35,20 +35,6 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> {
             this.mContextBasic=context;
 
         }
-  /*  @Override
-    public void onClick(View v) {
-
-        int position=(Integer) v.getTag();
-        Object object= getItem(position);
-        DataModelBasic dataModel=(DataModelBasic) object;
-
-        switch (v.getId())
-        {
-            case R.id.item:
-                dataModel.
-                break;
-        }
-    }*/
 
         private int lastPosition = -1;
 

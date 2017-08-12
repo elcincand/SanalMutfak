@@ -19,10 +19,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -33,10 +33,13 @@ public class BasicFragment extends Fragment {
     private ImageButton madd;
     private ListView mfood;
     private ListView mbozuk;
-    ArrayList<DataModelBasic> dataModelsBasic;
+    private String tempKey2;
+    ArrayList<DataModelBasic> dataModelsBasic = new ArrayList<DataModelBasic>();
+    List<String> keyarray  = new ArrayList<>();
+
     private static ListAdapterBasic adapterbasic;
+
     DatabaseReference mbasicRef;
-    int currKey;
 
     public BasicFragment() {
         // Required empty public constructor
@@ -76,17 +79,15 @@ public class BasicFragment extends Fragment {
 
 
     public void displayFood() {
-        dataModelsBasic = new ArrayList<>();
         mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
-                + LoginFragment.logkitchen + "/foods");
+                + LoginFragment.logkitchen + "/foods/");
 
         adapterbasic = new ListAdapterBasic(dataModelsBasic, getActivity());
         mfood.setAdapter(adapterbasic);
 
 
 
-        final Query lastQuery = mbasicRef.orderByChild("foodname");
-        lastQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+        mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot childSnapShot : dataSnapshot.getChildren()) {
@@ -94,6 +95,11 @@ public class BasicFragment extends Fragment {
                     String bname = (String) childSnapShot.child("foodname").getValue();
                     String bskt = (String) childSnapShot.child("skt").getValue();
                     String but = (String) childSnapShot.child("ut").getValue();
+
+                    tempKey2 = dataSnapshot.child(childSnapShot.getKey()).getKey().toString();
+                    keyarray.add(tempKey2);
+                    Log.d("kedi", String.valueOf(keyarray));
+
 
                     dataModelsBasic.add(new DataModelBasic(bname, bskt, but));
                     adapterbasic.notifyDataSetChanged();
@@ -112,8 +118,6 @@ public class BasicFragment extends Fragment {
         mfood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                String key1 = mbasicRef.child("foodname").getRef().getKey();
-                Log.d("kedi", key1);
 
 
                 AlertDialog.Builder adb=new AlertDialog.Builder(getActivity());
@@ -126,8 +130,14 @@ public class BasicFragment extends Fragment {
                         adapterbasic.remove(toRemovebasic);
                         adapterbasic.notifyDataSetChanged();
 
-                        //  mbasicRef.child("").removeValue();
-                        // mbasicRef.child(String.valueOf(position)).removeValue();
+                        mbasicRef.child(keyarray.get(position)).removeValue();
+                        Log.d("kedi", tempKey2);
+                        BasicFragment fragment = new BasicFragment();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.main_container, fragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
 
                     }
                 });

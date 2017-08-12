@@ -5,12 +5,12 @@ package com.android.sanalmutfak;
  */
 
 public class DataModelBasic {
-
     String bproduct;
     String btuketim;
     String bcounter;
 
     public DataModelBasic(String productbasic, String tuketimbasic, String counterbasic) {
+
         this.bproduct=productbasic;
         this.btuketim=tuketimbasic;
         this.bcounter=counterbasic;
