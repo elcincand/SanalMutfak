@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -134,14 +133,9 @@ private ImageButton madd;
                maddok.setOnClickListener(new View.OnClickListener() {
            @Override
              public void onClick(View v) {
-
                    addFood();
-                   BasicFragment fragment = new BasicFragment();
-                   FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                   FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                   fragmentTransaction.replace(R.id.main_container, fragment);
-                   fragmentTransaction.addToBackStack(null);
-                   fragmentTransaction.commit();
+
+
            }
          });
 
@@ -193,7 +187,7 @@ private ImageButton madd;
 
                 DataSnapshot lastKitchen = getLastElement(dataSnapshot.getChildren());
                 int foodID = 0;
-                if(lastKitchen != null){
+                if (lastKitchen != null) {
                     foodID = Integer.parseInt(lastKitchen.getKey()) + 1;
                 }
                 Log.d("food", String.valueOf(foodID));
@@ -202,18 +196,26 @@ private ImageButton madd;
                 String fprice = mprice.getText().toString();
                 String fut = mut.getText().toString();
                 String fskt = mskt.getText().toString();
-                if (fname != null && fprice != null && fut != null && fskt != null) {
+              /*  if (fname.isEmpty() || fprice.isEmpty() || fut.isEmpty() || fskt.isEmpty()) {
+                    Toast.makeText(getActivity(), "Empty lot!",
+                            Toast.LENGTH_LONG).show();
+
+
+                } else {*/
                     Food food = new Food(fname, fskt, fut, fprice);
 
                     mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
-                        .child("foods").child(String.valueOf(foodID))
-                        .setValue(food);
-                } else {
-                    Toast.makeText(getActivity(), "Empty lot!",
-                            Toast.LENGTH_LONG).show();
-                }
-            }
+                            .child("foods").child(String.valueOf(foodID))
+                            .setValue(food);
+                    BasicFragment fragment = new BasicFragment();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.main_container, fragment);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
 
+                //}
+            }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {

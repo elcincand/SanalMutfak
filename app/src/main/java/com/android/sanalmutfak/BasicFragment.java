@@ -122,7 +122,7 @@ public class BasicFragment extends Fragment {
 
                 AlertDialog.Builder adb=new AlertDialog.Builder(getActivity());
                 adb.setTitle("Delete?");
-                adb.setMessage("Are you sure you want to delete " + position);
+                adb.setMessage("Are you sure you want to delete this item?");
                 adb.setNegativeButton("Cancel", null);
                 adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
