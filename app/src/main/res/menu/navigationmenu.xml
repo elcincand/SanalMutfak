@@ -15,7 +15,9 @@
         android:title="My Savings"/>
 
 
-
+    <item android:id="@+id/nav_notification"
+        android:title="Notifications"
+        android:icon="@drawable/ic_notifications_none_black_24dp"/>
 
     <item android:id="@+id/nav_search"
     android:title="Search"

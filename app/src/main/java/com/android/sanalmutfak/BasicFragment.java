@@ -1,17 +1,14 @@
 package com.android.sanalmutfak;
 
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -35,9 +32,9 @@ public class BasicFragment extends Fragment {
     private ListView mbozuk;
     private String tempKey2;
     ArrayList<DataModelBasic> dataModelsBasic = new ArrayList<DataModelBasic>();
-    List<String> keyarray  = new ArrayList<>();
+    private List<String> keyarray = new ArrayList<>();
 
-    private static ListAdapterBasic adapterbasic;
+    private ListAdapterBasic adapterbasic;
 
     DatabaseReference mbasicRef;
 
@@ -54,8 +51,8 @@ public class BasicFragment extends Fragment {
         }
         View view = inflater.inflate(R.layout.fragment_basic, container, false);
         mfood = (ListView) view.findViewById(R.id.food);
-       // mbozuk = (ListView) view.findViewById(R.id.bozuk);
-        madd =(ImageButton) view.findViewById(R.id.foodAddButton);
+        // mbozuk = (ListView) view.findViewById(R.id.bozuk);
+        madd = (ImageButton) view.findViewById(R.id.foodAddButton);
 
         madd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,21 +67,17 @@ public class BasicFragment extends Fragment {
         });
 
         displayFood();
-        removeItemBasic();
-
 
         return view;
     }
-
 
 
     public void displayFood() {
         mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
                 + LoginFragment.logkitchen + "/foods/");
 
-        adapterbasic = new ListAdapterBasic(dataModelsBasic, getActivity());
+        adapterbasic = new ListAdapterBasic(dataModelsBasic, getActivity(), BasicFragment.this);
         mfood.setAdapter(adapterbasic);
-
 
 
         mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -94,18 +87,21 @@ public class BasicFragment extends Fragment {
 
                     String bname = (String) childSnapShot.child("foodname").getValue();
                     String bskt = (String) childSnapShot.child("skt").getValue();
-                    String but = (String) childSnapShot.child("ut").getValue();
+                   // String but = (String) childSnapShot.child("ut").getValue();
 
                     tempKey2 = dataSnapshot.child(childSnapShot.getKey()).getKey().toString();
+                    Log.d("keditemp", tempKey2);
+
                     keyarray.add(tempKey2);
                     Log.d("kedi", String.valueOf(keyarray));
 
 
-                    dataModelsBasic.add(new DataModelBasic(bname, bskt, but));
+                    dataModelsBasic.add(new DataModelBasic(bname, bskt));
                     adapterbasic.notifyDataSetChanged();
 
                 }
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
@@ -114,42 +110,36 @@ public class BasicFragment extends Fragment {
     }
 
 
-    public void removeItemBasic() {
-        mfood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-
-
-                AlertDialog.Builder adb=new AlertDialog.Builder(getActivity());
-                adb.setTitle("Delete?");
-                adb.setMessage("Are you sure you want to delete this item?");
-                adb.setNegativeButton("Cancel", null);
-                adb.setPositiveButton("Ok", new AlertDialog.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        DataModelBasic toRemovebasic = adapterbasic.getItem(position);
-                        adapterbasic.remove(toRemovebasic);
-                        adapterbasic.notifyDataSetChanged();
-
-                        mbasicRef.child(keyarray.get(position)).removeValue();
-                        Log.d("kedi", tempKey2);
-                        BasicFragment fragment = new BasicFragment();
-                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.main_container, fragment);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-
-                    }
-                });
-                adb.show();
-            }
-        });
+    public void removeItemBasic(int position) {
+        DataModelBasic toRemovebasic = adapterbasic.getItem(position);
+        adapterbasic.remove(toRemovebasic);
+        adapterbasic.notifyDataSetChanged();
+        Log.d("kediremove", keyarray.get(position));
+        mbasicRef.child(keyarray.get(position)).removeValue();
+        BasicFragment fragment = new BasicFragment();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
 
     }
-    }
 
 
 
+ public void addShopListBasic(int position){
+     DataModelBasic toRemovebasic = adapterbasic.getItem(position);
+     adapterbasic.add(toRemovebasic);
+     adapterbasic.notifyDataSetChanged();
+     Log.d("kediremove", keyarray.get(position));
+     mbasicRef.child(keyarray.get(position)).removeValue();
+     BasicFragment fragment = new BasicFragment();
+     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+     fragmentTransaction.replace(R.id.main_container, fragment);
+     fragmentTransaction.addToBackStack(null);
+     fragmentTransaction.commit();
 
+ }
 
-
+}

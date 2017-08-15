@@ -84,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
                         item.setChecked(true);
                         mDrawerLayout.closeDrawers();
                         break;
+                    case R.id.nav_notification:
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.add(R.id.main_container, new ShoppingFragment());
+                        fragmentTransaction.commit();
+                        getSupportActionBar().setTitle("My Shopping List");
+                        item.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        break;
                     case R.id.nav_search:
 
                         item.setChecked(true);

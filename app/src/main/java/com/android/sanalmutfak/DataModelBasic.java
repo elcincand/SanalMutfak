@@ -7,13 +7,14 @@ package com.android.sanalmutfak;
 public class DataModelBasic {
     String bproduct;
     String btuketim;
-    String bcounter;
+  //  String bcounter;
 
-    public DataModelBasic(String productbasic, String tuketimbasic, String counterbasic) {
+
+    public DataModelBasic(String productbasic, String tuketimbasic) {
 
         this.bproduct=productbasic;
         this.btuketim=tuketimbasic;
-        this.bcounter=counterbasic;
+       // this.bcounter=counterbasic;
 
     }
 
@@ -25,9 +26,10 @@ public class DataModelBasic {
         return btuketim;
     }
 
-    public String getCounterBasic() {
-        return bcounter;
-    }
+   // public String getCounterBasic() {
+  //      return bcounter;
+  //  }
+
 
 
 
