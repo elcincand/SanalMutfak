@@ -39,8 +39,7 @@ public class BasicFragment extends Fragment {
     private ListAdapterBasic adapterbasic;
 
     DatabaseReference mbasicRef;
-    DatabaseReference mshopRef;
-    int shopid;
+    DatabaseReference mDatabaseShop;
     public static String sname;
 
 
@@ -143,8 +142,7 @@ public class BasicFragment extends Fragment {
     }
 
  public void addShopListBasic(final int position){
-     mshopRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
-             + LoginFragment.logkitchen + "/shoplist/");
+
      mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
          @Override
          public void onDataChange(DataSnapshot dataSnapshot) {
@@ -157,19 +155,26 @@ public class BasicFragment extends Fragment {
          }
      });
 
-     Query lastQuery2 = mshopRef.child("kitchens").orderByKey();
+
+     mDatabaseShop = FirebaseDatabase.getInstance().getReference();
+
+
+     Query lastQuery2 =mDatabaseShop.child("kitchens").child(String.valueOf(LoginFragment.logkitchen)).child("shoplist");
+
      lastQuery2.addListenerForSingleValueEvent(new ValueEventListener() {
          @Override
          public void onDataChange(DataSnapshot dataSnapshot) {
              DataSnapshot shoplist = getLastElement(dataSnapshot.getChildren());
-             shopid = 0;
+             int shopid = 0;
              if(shoplist != null){
                  shopid = Integer.parseInt(shoplist.getKey()) + 1;
              }
              Log.d("kedishopid", String.valueOf(shopid));
 
              String a = keyarray.get(position);
-             mshopRef.child(a).child(String.valueOf(shopid)).setValue(sname);
+             mDatabaseShop.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
+                     .child("shoplist").child(String.valueOf(shopid)) //child("foodname")
+                     .setValue(sname);
 
          }
 
