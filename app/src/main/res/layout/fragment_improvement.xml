@@ -49,13 +49,22 @@
         android:weightSum="1">
 
 
-        <ListView
+        <TextView
             android:id="@+id/savings"
             android:layout_marginTop="30dp"
             android:layout_width="350dp"
-            android:layout_height="341dp" />
+            android:layout_height="48dp" />
 
-
+        <TextView
+            android:id="@+id/savings2"
+            android:layout_marginTop="30dp"
+            android:layout_width="350dp"
+            android:layout_height="150dp" />
+        <TextView
+            android:id="@+id/savings3"
+            android:layout_marginTop="30dp"
+            android:layout_width="350dp"
+            android:layout_height="150dp" />
 
     </LinearLayout>
 

@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -159,7 +160,7 @@ private ImageButton madd;
 
 
     private void updateskt() {
-        String myFormat = "dd/MM/yy"; //In which you need put here
+        String myFormat = "yyyy-MM-dd"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
 
         mskt.setText(sdf.format(myCalendar.getTime()));
@@ -167,8 +168,10 @@ private ImageButton madd;
 
     }
 
+
+
     private void updateut() {
-        String myFormat = "dd/MM/yy"; //In which you need put here
+        String myFormat = "yyyy-MM-dd"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
 
         mut.setText(sdf.format(myCalendar.getTime()));
@@ -196,17 +199,17 @@ private ImageButton madd;
                 String fprice = mprice.getText().toString();
                 String fut = mut.getText().toString();
                 String fskt = mskt.getText().toString();
-              /*  if (fname.isEmpty() || fprice.isEmpty() || fut.isEmpty() || fskt.isEmpty()) {
+                if (fname.isEmpty() || fprice.isEmpty() || fut.isEmpty() || fskt.isEmpty()) {
                     Toast.makeText(getActivity(), "Empty lot!",
                             Toast.LENGTH_LONG).show();
 
-
-                } else {*/
+                } else {
                     Food food = new Food(fname, fskt, fut, fprice);
 
                     mDatabase.child("kitchens").child(String.valueOf(LoginFragment.logkitchen))
                             .child("foods").child(String.valueOf(foodID))
                             .setValue(food);
+
                     BasicFragment fragment = new BasicFragment();
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -214,7 +217,7 @@ private ImageButton madd;
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
 
-                //}
+                }
             }
 
             @Override

@@ -77,22 +77,23 @@ public class BasicFragment extends Fragment {
     }
 
 
+
     public void displayFood() {
         mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
                 + LoginFragment.logkitchen + "/foods/");
+        mbasicRef.orderByChild("skt");
 
         adapterbasic = new ListAdapterBasic(dataModelsBasic, getActivity(), BasicFragment.this);
         mfood.setAdapter(adapterbasic);
 
-
-        mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
+       mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot childSnapShot : dataSnapshot.getChildren()) {
 
                     String bname = (String) childSnapShot.child("foodname").getValue();
                     String bskt = (String) childSnapShot.child("skt").getValue();
-                   // String but = (String) childSnapShot.child("ut").getValue();
+                    // String but = (String) childSnapShot.child("ut").getValue();
 
                     tempKey2 = dataSnapshot.child(childSnapShot.getKey()).getKey().toString();
                     Log.d("keditemp", tempKey2);
@@ -102,6 +103,7 @@ public class BasicFragment extends Fragment {
 
 
                     dataModelsBasic.add(new DataModelBasic(bname, bskt));
+                    mbasicRef.orderByChild("skt");
                     adapterbasic.notifyDataSetChanged();
 
                 }
