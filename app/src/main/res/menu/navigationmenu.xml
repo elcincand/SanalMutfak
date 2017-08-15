@@ -2,8 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:id="@+id/myprofile"
-        android:title="My Account"/>
+
 
     <item android:id="@+id/myinventory"
         android:title="My Inventory"/>

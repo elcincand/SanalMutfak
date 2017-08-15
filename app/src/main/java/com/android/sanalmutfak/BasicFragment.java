@@ -16,9 +16,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -37,6 +39,10 @@ public class BasicFragment extends Fragment {
     private ListAdapterBasic adapterbasic;
 
     DatabaseReference mbasicRef;
+    DatabaseReference mshopRef;
+    int shopid;
+    public static String sname;
+
 
     public BasicFragment() {
         // Required empty public constructor
@@ -125,20 +131,54 @@ public class BasicFragment extends Fragment {
 
     }
 
+    public <T> T getLastElement(final Iterable<T> elements) {
+        Iterator<T> itr = elements.iterator();
+        T lastElement = null;
 
+        while(itr.hasNext()) {
+            lastElement=itr.next();
+        }
 
- public void addShopListBasic(int position){
-     DataModelBasic toRemovebasic = adapterbasic.getItem(position);
-     adapterbasic.add(toRemovebasic);
-     adapterbasic.notifyDataSetChanged();
-     Log.d("kediremove", keyarray.get(position));
-     mbasicRef.child(keyarray.get(position)).removeValue();
-     BasicFragment fragment = new BasicFragment();
-     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-     fragmentTransaction.replace(R.id.main_container, fragment);
-     fragmentTransaction.addToBackStack(null);
-     fragmentTransaction.commit();
+        return lastElement;
+    }
+
+ public void addShopListBasic(final int position){
+     mshopRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
+             + LoginFragment.logkitchen + "/shoplist/");
+     mbasicRef.addListenerForSingleValueEvent(new ValueEventListener() {
+         @Override
+         public void onDataChange(DataSnapshot dataSnapshot) {
+                    String a = keyarray.get(position);
+                 sname = (String) dataSnapshot.child(a).child("foodname").getValue();
+             }
+
+         @Override
+         public void onCancelled(DatabaseError databaseError) {
+         }
+     });
+
+     Query lastQuery2 = mshopRef.child("kitchens").orderByKey();
+     lastQuery2.addListenerForSingleValueEvent(new ValueEventListener() {
+         @Override
+         public void onDataChange(DataSnapshot dataSnapshot) {
+             DataSnapshot shoplist = getLastElement(dataSnapshot.getChildren());
+             shopid = 0;
+             if(shoplist != null){
+                 shopid = Integer.parseInt(shoplist.getKey()) + 1;
+             }
+             Log.d("kedishopid", String.valueOf(shopid));
+
+             String a = keyarray.get(position);
+             mshopRef.child(a).child(String.valueOf(shopid)).setValue(sname);
+
+         }
+
+         @Override
+         public void onCancelled(DatabaseError databaseError) {
+             //Handle possible errors.
+         }
+     });
+
 
  }
 

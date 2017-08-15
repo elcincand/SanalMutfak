@@ -49,14 +49,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.myprofile:
-                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.add(R.id.main_container, new ProfileBlankFragment());
-                        fragmentTransaction.commit();
-                        getSupportActionBar().setTitle("My Profile");
-                        item.setChecked(true);
-                        mDrawerLayout.closeDrawers();
-                        break;
 
                     case R.id.myinventory:
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();

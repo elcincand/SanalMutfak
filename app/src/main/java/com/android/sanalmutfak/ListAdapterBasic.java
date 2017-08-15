@@ -24,7 +24,7 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> implements Vi
     private ArrayList<DataModelBasic> dataSetBasic;
     Context mContextBasic;
     DatabaseReference mbasicRef;
-
+    DatabaseReference mshopRef;
 
 
     // View lookup cache
@@ -56,8 +56,8 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> implements Vi
         switch (v.getId())
         {
             case R.id.item_remove:
-                mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
-                        +LoginFragment.logkitchen + "/foods/");
+                mshopRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
+                        + LoginFragment.logkitchen + "/shoplist");
 
                 AlertDialog.Builder adb = new AlertDialog.Builder(getContext());
                 adb.setTitle("Delete?");
@@ -73,8 +73,6 @@ public class ListAdapterBasic extends ArrayAdapter<DataModelBasic> implements Vi
                 break;
 
             case R.id.item_addshop:
-                mbasicRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://sanalmutfak-d81ad.firebaseio.com/kitchens/"
-                        +LoginFragment.logkitchen + "/foods/");
 
                 AlertDialog.Builder adb2 = new AlertDialog.Builder(getContext());
                 adb2.setTitle("Add to shopping list?");
